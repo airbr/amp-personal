@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <title>Morgan Murrah - Web Developer</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="../static/img/icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../static/img/icons/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/icons/favicon-16x16.png">
     <!--[if IE]>
-    <link rel="shortcut icon" href="../static/img/icons/favicon.ico"><![endif]-->
+    <link rel="shortcut icon" href="img/icons/favicon.ico"><![endif]-->
     <!-- Add to home screen for Android and modern mobile browsers -->
-    <link rel="manifest" href="../static/manifest.json">
+    <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#4DBA87">
     <link rel="canonical" href="https://www.morganwebdev.com">
 
@@ -18,9 +18,9 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="morgan-murrah">
-    <link rel="apple-touch-icon" href="../static/img/icons/apple-touch-icon.png">
+    <link rel="apple-touch-icon" href="img/icons/apple-touch-icon.png">
     <!-- Add to home screen for Windows -->
-    <meta name="msapplication-TileImage" content="../static/img/icons/msapplication-icon-144x144.png">
+    <meta name="msapplication-TileImage" content="img/icons/msapplication-icon-144x144.png">
     <meta name="msapplication-TileColor" content="#000000">
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 
@@ -245,10 +245,6 @@
             background-attachment: fixed;
         }
 
-        #offline {
-            background-color: lavender ;
-        }
-
         p {
             margin: .25em
         }
@@ -290,15 +286,8 @@
             outline: 0
         }
 
-        #desktop-query {
-            display: none;
-        }
-
     </style>
-
-
     <script async src="https://cdn.ampproject.org/v0.js"></script>
-
 </head>
 <body>
 <div id="app">
@@ -306,23 +295,20 @@
         <span>Morgan Murrah</span>
     </header>
     <main>
-
             <div id="mobile-query" class="marvel-device htc-one">
-
                 <div class="top-bar"></div>
                 <div class="camera"></div>
                 <div class="sensor"></div>
                 <div class="speaker"></div>
                 <div class="screen">
                     <div itemscope itemtype="http://schema.org/Person" class="h-card" rel="me">
-
                         <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
                             <span itemprop="addressLocality">Bellingham, WA</span>,
                             <span itemprop="addressCountry">USA</span></p>
                         <p class="p-note"><span itemprop="jobTitle">Web Developer</span> - <span
                                 itemprop="worksFor"> EasyRx LLC </span></p>
                         <p title="I am an American New Zealander" lang="mi">tēnā koutou - Greetings to you all</p>
-                        <div><a href="/static/vCard.vcf" class="download">Download my contact details.</a></div>
+                        <div><a href="vCard.vcf" class="download">Download my contact details.</a></div>
 
                         <!--Row 1-->
 
@@ -458,7 +444,7 @@
                                     <figure>
                                         <svg version="1.1" role="img" aria-labelledby="title" class="square"
                                              viewBox="0 0 512 512"
-                                             style="background: url(static/flagimg.png); background-size: auto 100%;">
+                                             style="background: url(img/flagimg.png); background-size: auto 100%;">
                                         </svg>
                                         <figcaption role="icon">US/NZ Dual Citizen</figcaption>
                                     </figure>
@@ -554,7 +540,7 @@
                             </a></div>
 
                             <div class="icon">
-                                <a href="/static/lighthouse/morganwebdev.com_2018-03-18_18-59-35.html">
+                                <a href="lighthouse/morganwebdev.com_2018-03-18_18-59-35.html">
                                     <figure>
                                         <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
                                             <path d="m71 460-41-460h451l-41 460-185 52" fill="#e34f26"/>
@@ -685,66 +671,63 @@
 </div>
 
 
+<script>
+  (function() {
+    'use strict';
 
+    // Check to make sure service workers are supported in the current browser,
+    // and that the current page is accessed from a secure origin. Using a
+    // service worker from an insecure origin will trigger JS console errors.
+    const isLocalhost = Boolean(window.location.hostname === 'localhost' ||
+        // [::1] is the IPv6 localhost address.
+        window.location.hostname === '[::1]' ||
+        // 127.0.0.1/8 is considered localhost for IPv4.
+        window.location.hostname.match(
+            /^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/
+        )
+    );
 
-<!-- Todo: only include in production -->
-<!--<script>-->
-  <!--(function() {-->
-    <!--'use strict';-->
+    window.addEventListener('load', function() {
+      if ('serviceWorker' in navigator &&
+          (window.location.protocol === 'https:' || isLocalhost)) {
+        navigator.serviceWorker.register('service-worker.js')
+            .then(function(registration) {
+              // updatefound is fired if service-worker.js changes.
+              registration.onupdatefound = function() {
+                // updatefound is also fired the very first time the SW is installed,
+                // and there's no need to prompt for a reload at that point.
+                // So check here to see if the page is already controlled,
+                // i.e. whether there's an existing service worker.
+                if (navigator.serviceWorker.controller) {
+                  // The updatefound event implies that registration.installing is set
+                  const installingWorker = registration.installing;
 
-    <!--// Check to make sure service workers are supported in the current browser,-->
-    <!--// and that the current page is accessed from a secure origin. Using a-->
-    <!--// service worker from an insecure origin will trigger JS console errors.-->
-    <!--const isLocalhost = Boolean(window.location.hostname === 'localhost' ||-->
-        <!--// [::1] is the IPv6 localhost address.-->
-        <!--window.location.hostname === '[::1]' ||-->
-        <!--// 127.0.0.1/8 is considered localhost for IPv4.-->
-        <!--window.location.hostname.match(-->
-            <!--/^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/-->
-        <!--)-->
-    <!--);-->
+                  installingWorker.onstatechange = function() {
+                    switch (installingWorker.state) {
+                      case 'installed':
+                        // At this point, the old content will have been purged and the
+                        // fresh content will have been added to the cache.
+                        // It's the perfect time to display a "New content is
+                        // available; please refresh." message in the page's interface.
+                        break;
 
-    <!--window.addEventListener('load', function() {-->
-      <!--if ('serviceWorker' in navigator &&-->
-          <!--(window.location.protocol === 'https:' || isLocalhost)) {-->
-        <!--navigator.serviceWorker.register('service-worker.js')-->
-            <!--.then(function(registration) {-->
-              <!--// updatefound is fired if service-worker.js changes.-->
-              <!--registration.onupdatefound = function() {-->
-                <!--// updatefound is also fired the very first time the SW is installed,-->
-                <!--// and there's no need to prompt for a reload at that point.-->
-                <!--// So check here to see if the page is already controlled,-->
-                <!--// i.e. whether there's an existing service worker.-->
-                <!--if (navigator.serviceWorker.controller) {-->
-                  <!--// The updatefound event implies that registration.installing is set-->
-                  <!--const installingWorker = registration.installing;-->
+                      case 'redundant':
+                        throw new Error('The installing ' +
+                            'service worker became redundant.');
 
-                  <!--installingWorker.onstatechange = function() {-->
-                    <!--switch (installingWorker.state) {-->
-                      <!--case 'installed':-->
-                        <!--// At this point, the old content will have been purged and the-->
-                        <!--// fresh content will have been added to the cache.-->
-                        <!--// It's the perfect time to display a "New content is-->
-                        <!--// available; please refresh." message in the page's interface.-->
-                        <!--break;-->
-
-                      <!--case 'redundant':-->
-                        <!--throw new Error('The installing ' +-->
-                            <!--'service worker became redundant.');-->
-
-                      <!--default:-->
-                        <!--// Ignore-->
-                    <!--}-->
-                  <!--};-->
-                <!--}-->
-              <!--};-->
-            <!--}).catch(function(e) {-->
-          <!--console.error('Error during service worker registration:', e);-->
-        <!--});-->
-      <!--}-->
-    <!--});-->
-  <!--})();-->
-<!--</script>-->
+                      default:
+                        // Ignore
+                    }
+                  };
+                }
+              };
+            }).catch(function(e) {
+          console.error('Error during service worker registration:', e);
+        });
+      }
+    });
+  })();
+</script>
 <!-- built files will be auto injected -->
 </body>
 </html>
