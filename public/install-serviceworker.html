@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./serviceworker.js', { scope: '.' })
+        .then(function(reg) {
+          console.log('Registered service worker ', reg);
+        });
+  }
+</script>
+</body>
+</html>
