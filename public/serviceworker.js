@@ -15,7 +15,6 @@ self.addEventListener('install', function(event) {
 self.addEventListener('fetch', function(event) {
   if (event.request.mode == 'navigate') {
     event.respondWith(fetch(event.request).catch(function(error) {
-      console.log(error);
       return caches.open(CACHE_NAME).then(function(cache) {
         return cache.match('offline.html');
       });
